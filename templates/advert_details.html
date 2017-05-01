@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+        <a href="/advert/list" class="btn btn-primary btn-lg" role="button">На главную</a>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">${advert.name}</h3>
+            </div>
+            <div>
+                <span>${advert.createOn}</span>
+            </div>
+            <div class="panel-body">${advert.description}</div>
+            <br>
+            <h4>Комментарии:</h4>
+            <#list advert.comments as comment>
+                <div>
+                    ${comment.text}<br>
+                </div>
+            </#list>
+            <a href="/advert/${advert.id}/comment/new" class="btn btn-primary btn-sm" role="button">Добавить
+                комментрий</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
