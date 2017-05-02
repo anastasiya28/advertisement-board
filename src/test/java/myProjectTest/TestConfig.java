@@ -23,7 +23,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-//@EnableWebMvc
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(basePackages = "myProjectTest")
@@ -92,26 +91,13 @@ public class TestConfig {
         return txManager;
     }
 
-//    <bean
-//    class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-//    id="entityManagerFactory">
-//        <property name="dataSource" ref="dataSource" />
-//    </bean>
-
-//    @Bean
-//    public EntityManagerFactory entityManagerFactory(DataSource dataSource, Properties hibernateProperties ) {
-//        LocalContainerEntityManagerFactoryBean lef = new LocalContainerEntityManagerFactoryBean();
-//        lef.setDataSource(dataSource);
-//        lef.setJpaProperties(hibernateProperties);
-////        lef.setJpaVendorAdapter(jpaVendorAdapter);
-////        lef.setPackagesToScan("hello");
-//        return lef.getObject();
-//    }
-
-
     @Bean
     public AdvertisementDAO getAdvertisementDAO() {
         return new AdvertisementDAOImpl();
     }
 
+//    @Bean
+//    public CommentDAO getCommentDAO() {
+//        return new CommentDAOImpl();
+//    }
 }

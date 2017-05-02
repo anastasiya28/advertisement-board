@@ -18,14 +18,13 @@ public class IndexController {
     private AdvertisementDAO advertisementDAO;
 
     @SuppressWarnings("SameReturnValue")
-//    @RequestMapping(value = "/", method = RequestMethod.GET, produces = {"application/json; charset=UTF-8"})
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = {"text/html; charset=UTF-8"})
     @ResponseBody
     @Transactional
     public String homePage() {
-//        return "Menu application. Привет";
-        Map<String, Object> map = new HashMap<>();
-        map.put("var1", advertisementDAO.getById(1));
-        return PageGenerator.instance().getPage("root.html", map);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("adverts", advertisementDAO.getAll());
+//        map.put("var1", advertisementDAO.getById(1));
+        return PageGenerator.instance().getPage("index.html", null);
     }
 }
